@@ -14,9 +14,10 @@ const config = {
   };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  console.log(userAuth);
+  // console.log(userAuth);
   if (!userAuth) return;
 
+  // data 都會在 doc 裡面
   const userRef = firestore.doc(`users/${userAuth.uid}`);
 
   const snapShot = await userRef.get();
